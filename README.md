@@ -36,7 +36,7 @@ Dieser Code erstellt prädiktive Modelle, basierend auf Entscheidungsbäumen und
 12. delinq.2yrs: Dies ist die Anzahl der Vorkommnisse eines Verzugs von über 30 Tagen innerhalb der letzten 2 Jahre.
 13. pub.rec: Dies ist die Anzahl der negativen Einträge (wie Bankrott, Steuerverzug, Verurteilungen usw.) des Kreditnehmers.
 
-**Benötigte Libraries instalieren**
+**Benötigte Libraries instalieren:**
 - pandas
 - numpy
 - matplotlib
@@ -45,7 +45,7 @@ Dieser Code erstellt prädiktive Modelle, basierend auf Entscheidungsbäumen und
 **Daten einlesen "Loan_Data.csv"**
 
 
-**Explorative Datensanalyse**
+**Explorative Datensanalyse:**
 
 In diesem Teil wird die explorative Datenanalyse ausgeführt. Es werden unterschiedliche Diagramme generiert, um Zusammenhänge und Muster zu entdecken.Ziel dieses Abschnitts ist es, durch verschiedene Aufgaben ein umfassendes Verständnis der Daten zu erlangen. Dabei sollen wesentliche Trends und Muster aufgedeckt werden, die zur Vorhersage der Rückzahlungsfähigkeit von Kreditnehmern beitragen können:
 
@@ -55,20 +55,26 @@ In diesem Teil wird die explorative Datenanalyse ausgeführt. Es werden untersch
 - Jointplot von FICO Score und Zinsen: Untersuchen Sie den Trend zwischen dem FICO Score und den Zinsen durch die Erstellung eines Jointplots.
 - Lmplots für “not.fully.paid” und “credit.policy”: Erstellen Sie lmplots, um zu sehen, ob sich der Trend zwischen “not.fully.paid” und “credit.policy” unterscheidet. Teilen Sie die Daten in zwei Spalten auf.
 
-**Daten vorbereiten**
+**Daten vorbereiten:**
+
 In diesem Abschnitt werden Umformungen durchgeführt, um die Daten für die weitere Analyse vorzubereiten. Dies beinhaltet die Umwandlung kategorischer Merkmale in numerische Werte und die Speicherung der transformierten Daten in einem neuen DataFrame.
 
-**Train Test Split**
+**Train Test Split:**
+
 In diesem Abschnitt wird der Datensatz in Trainings- und Testsets aufgeteilt. Mit Hilfe der `train_test_split` Funktion aus der `sklearn` Bibliothek werden die unabhängigen Variablen (X) von der Zielvariable ('not.fully.paid') getrennt und dann in Trainings- und Testsets unterteilt. Dies ermöglicht eine unabhängige Validierung des Modells auf dem Testset nach dem Training auf dem Trainingsset.
 
-**Entscheidungsbaummodell trainieren**
+**Entscheidungsbaummodell trainieren:**
+
 In diesem Abschnitt wird ein Entscheidungsbaum-Modell erstellt und trainiert. Anschließend wird eine Instanz des DecisionTreeClassifier namens dtree erstellt. Schließlich wird das Modell mit den Trainingsdaten trainiert, indem die fit Methode auf dtree angewendet wird. Dieser Prozess passt das Modell an die Trainingsdaten an, um Muster zu erkennen, die zur Vorhersage der Zielvariable verwendet werden können.
 
-**Vorhersagen und Auswertung**
+**Vorhersagen und Auswertung:**
+
 Das Entscheidungsbaum-Modell hat eine Genauigkeit von 73%. Es ist gut darin, Klasse 0 vorherzusagen, aber nicht so gut bei Klasse 1. Die Confusion Matrix zeigt mehr falsche Vorhersagen für Klasse 1. Verbesserungen könnten erforderlich sein, um die Vorhersageleistung für Klasse 1 zu erhöhen.
 
-**Random Forest Modell trainieren**
+**Random Forest Modell trainieren:**
+
 In diesem Abschnitt wird ein Random Forest Modell erstellt und trainiert.
 
-**Vorhersagen und Auswertung**
+**Vorhersagen und Auswertung:**
+
 Das Random Forest Modell hat eine Genauigkeit von 85%. Es ist sehr gut darin, Klasse 0 vorherzusagen, aber es hat Schwierigkeiten bei der Vorhersage von Klasse 1. Die Confusion Matrix zeigt, dass das Modell die meisten Klasse 1 Fälle falsch vorhersagt. Es könnte notwendig sein, das Modell zu verbessern, um die Vorhersageleistung für Klasse 1 zu erhöhen.
